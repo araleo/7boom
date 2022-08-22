@@ -1,0 +1,17 @@
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list > li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.item {
+  color: grey;
+}
+
+.boom {
+  color: red;
+}

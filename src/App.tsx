@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Button from './components/Button/Button';
+import Label from './components/Label/Label';
+import List from './components/List/List';
+import use7Boom from './hooks/use7Boom';
+import styles from './App.module.css';
 
 function App() {
+  const { current, sequence, add1 } = use7Boom(1);
+
+  const handleClick = () => {
+    add1();
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className={styles.upper}>
+        <Button onClick={handleClick} />
+        <Label current={current} />
+      </div>
+      <List sequence={sequence} />
     </div>
   );
 }
