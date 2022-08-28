@@ -1,9 +1,10 @@
-import React from 'react';
+import { useEffect } from 'react';
 import Button from './components/Button/Button';
 import Label from './components/Label/Label';
 import List from './components/List/List';
 import use7Boom from './hooks/use7Boom';
 import styles from './App.module.css';
+import { isNumBoom } from './utils/lib';
 
 function App() {
   const { current, sequence, add1 } = use7Boom(1);
@@ -11,6 +12,10 @@ function App() {
   const handleClick = () => {
     add1();
   };
+
+  useEffect(() => {
+    document.title = isNumBoom(current) ? 'Boom!' : 'Counting';
+  }, [current]);
 
   return (
     <div>
