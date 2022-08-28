@@ -10,7 +10,7 @@ describe('use7Boom hook tests', () => {
 
   test('use7Boom inits with 0 when initialNumber is negative', () => {
     const { result } = renderHook(() => use7Boom(-10));
-    expect(result.current.sequence).toEqual([0]);
+    expect(result.current.sequence).toEqual([-1]);
     expect(result.current.current).toEqual(0);
   });
 
